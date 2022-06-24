@@ -4,25 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List Attempt 2</title>
+    <title>Expense Tracker</title>
 
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
+    <h1>Expense Tracker</h1>
+    <h4>Add A New Item:</h4>
+    <h6>Click on table row to delete expense</h6>
 
-    <h1>To Do List</h1>
-
-    <div class="container">
-
-        <input type="text" id="userInput" placeholder="Add an item">
-
-        <button id="submit">Submit</button>
-        <button id="clear">Clear List</button>
+    <div id="nameContainer">
+        <label for="name">Name:</label>
+        <input type="text" size="80" id="name" placeholder="Where was the expense made?">
     </div>
 
-    <ul id="list">
-        <li>This is a random todo!</li>
-    </ul>
+    <div id="dateNAmountContainer">
+        <label for="date">Date:</label>
+        <input type="date" size="60" placeholder="mm/dd/yyyy" id="date">
+
+        <label for="amount">Amount:</label>
+        <input type="text" size="40" id="amount" placeholder="$0.00">
+    </div>
+
+    <div id="addDataDiv">
+        <button id="addData">Add Expense</button>
+    </div>
+
+
+
+    <table>
+        <tr id="tableHead">
+          <th>Name</th>
+          <th>Date</th>
+          <th>Amount</th>
+        </tr>
+        <tr id="tableData">
+          <td id="tableData">Gucci</td>
+          <td id="tableData">12-05-2021</td>
+          <td id="tableData">$430.21</td>
+        </tr>
+        <tr id="tableData">
+          <td id="tableData">Nike</td>
+          <td id="tableData">1-12-2022</td>
+          <td id="tableData">$73.41</td>
+        </tr>
+      </table>
+
+
 
     <script src="app.js"></script>
 </body>

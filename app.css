@@ -2,15 +2,68 @@ h1 {
     display: flex;
     justify-content: center;
 }
-
-.container {
+h4 {
+    display: flex;
+    justify-content: center;
+}
+h6 {
     display: flex;
     justify-content: center;
 }
 
-ul {
-    padding-top: 1em;
-    padding-bottom: 1em;
+
+#nameContainer {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    margin-right: .25em;
+}
+input {
+    margin-right: .25em;
+}
+
+#dateNAmountContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#date {
+    width: 200px;
+}
+
+#addData {
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border-color: rgb(15, 104, 15);
+    background-color: rgb(39, 189, 39);
+    transition: all .25s ease-in-out;
+}
+#addData:hover {
+    color: black;
+}
+#addDataDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+th, td {
     border: 1px solid black;
-    border-radius: 10px;
+}
+th {
+    width: 12em;
+}
+
+#tableData {
+    background-color: rgb(233, 233, 227);
 }

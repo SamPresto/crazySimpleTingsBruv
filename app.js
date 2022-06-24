@@ -1,31 +1,67 @@
-const input = document.querySelector('#userInput');
-const submit = document.querySelector('#submit');
-const clear = document.querySelector('#clear');
+const namePlace = document.querySelector('#name');
+const date = document.querySelector('#date');
+const amount = document.querySelector('#amount');
+const addExpenseBtn = document.querySelector('#addData');
 
-const ul = document.querySelector('#list');
+const tableData = document.querySelector('tbody');
 
-submit.addEventListener('click', () => {
-    if(input.value != '') {
-        let newLi = document.createElement('LI');
-        newLi.innerText = input.value;
-        ul.appendChild(newLi);
-        input.value = '';
-    } else { alert("ADD TEXT TO CREATE A TODO"); }
-});
+const table = document.querySelector('table');
 
-clear.addEventListener('click', () => {
-    ul.innerHTML = '';
-});
+const totalSpent = document.querySelector('#totalSpent');
+let totalMoney = 0;
 
-ul.addEventListener('click', (e) => {
-    if(e.target.nodeName = "LI") {
+// use event degredation to remove tr when clicked
+table.addEventListener('click', (e) => {    
 
-        e.target.style.color = 'green';
-        e.target.style.textDecoration = 'line-through';
+    if(e.target.id = 'tableData' && e.target.parentElement.id != 'tableHead') {
+        e.target.parentElement.remove();
     }
+
 });
-ul.addEventListener('dblclick', (e) => {
-    if(e.target.nodeName = "LI") {
-        e.target.remove();
+
+
+addExpenseBtn.addEventListener('click', () => {
+    if(namePlace.value != '' && date.value != '' && amount.value != '') {
+
+        // create new table row
+        let newTr = document.createElement('TR');
+        newTr.setAttribute('id', 'tableData');
+
+        // create new table data for the name
+        let newName = document.createElement('TD');
+        let newNameText = document.createTextNode(namePlace.value);
+
+        newName.appendChild(newNameText);
+        newTr.appendChild(newName);
+
+
+        // create new table data for the date
+        let newDate = document.createElement('TD');
+        let newDateText = document.createTextNode(date.value);
+
+        newDate.appendChild(newDateText);
+        newTr.appendChild(newDate);
+
+
+        // create new table data for the amount
+        let newAmount = document.createElement('TD');
+        let newAmountText = document.createTextNode(`$${amount.value}`);
+        let actualAmount = newAmountText.toString();
+
+
+        newAmount.appendChild(newAmountText);
+        newTr.appendChild(newAmount);
+
+        tableData.appendChild(newTr);
+
+
+        // reset text inputs
+        namePlace.value = '';
+        date.value = '';
+        amount.value = '';
+
+    }
+    else {
+        alert("FINISH ALL INPUTS");
     }
 });
