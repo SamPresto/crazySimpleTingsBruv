@@ -4,15 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monkey Emoji</title>
+    <title>Cookies Clickeria</title>
 
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <div class="emoji closed active">🙈</div>
-    <div class="emoji open">🙉</div>
 
+    <div id="cookieStats">
 
+        <div class="cookieCountDisplay">
+            <label for="cookieCount"> Cookies</label>
+            <div id="cookieCount">0</div>
+        </div>
+
+        <div class="cookiePerSecondDisplay">
+            <label for="cookiesPerSec">Cookies/Second</label>
+            <div id="cookiesPerSec">0</div>
+        </div>
+
+    </div>
+    
+    
+
+    <div id="cookie">Click Me</div>
+
+    <div class="together">
+        <label for="buyOut">Needed to Win: </label>
+        <div id="buyOut">1,000,000 Cookies</div>
+    </div>
 
     <script src="app.js"></script>
 </body>
