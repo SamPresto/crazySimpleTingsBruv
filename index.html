@@ -4,34 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookies Clickeria</title>
+    <title>Todo List Attempt 2</title>
 
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
 
-    <div id="cookieStats">
+    <h1>To Do List</h1>
 
-        <div class="cookieCountDisplay">
-            <label for="cookieCount"> Cookies</label>
-            <div id="cookieCount">0</div>
-        </div>
+    <div class="container">
 
-        <div class="cookiePerSecondDisplay">
-            <label for="cookiesPerSec">Cookies/Second</label>
-            <div id="cookiesPerSec">0</div>
-        </div>
+        <input type="text" id="userInput" placeholder="Add an item">
 
+        <button id="submit">Submit</button>
+        <button id="clear">Clear List</button>
     </div>
-    
-    
 
-    <div id="cookie">Click Me</div>
-
-    <div class="together">
-        <label for="buyOut">Needed to Win: </label>
-        <div id="buyOut">1,000,000 Cookies</div>
-    </div>
+    <ul id="list">
+        <li>This is a random todo!</li>
+    </ul>
 
     <script src="app.js"></script>
 </body>
