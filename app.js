@@ -1,67 +1,103 @@
-const namePlace = document.querySelector('#name');
-const date = document.querySelector('#date');
-const amount = document.querySelector('#amount');
-const addExpenseBtn = document.querySelector('#addData');
+// input from user stored in this variable
+const input = document.querySelector('#note');
 
-const tableData = document.querySelector('tbody');
+const inputTitle = document.querySelector('#noteTitle');
 
-const table = document.querySelector('table');
+// button variable
+const addBtn = document.querySelector('#addNote');
 
-const totalSpent = document.querySelector('#totalSpent');
-let totalMoney = 0;
-
-// use event degredation to remove tr when clicked
-table.addEventListener('click', (e) => {    
-
-    if(e.target.id = 'tableData' && e.target.parentElement.id != 'tableHead') {
-        e.target.parentElement.remove();
-    }
-
-});
+// this is a div element that we want to append text to
+const addText = document.querySelector('#addTextHere');
 
 
-addExpenseBtn.addEventListener('click', () => {
-    if(namePlace.value != '' && date.value != '' && amount.value != '') {
-
-        // create new table row
-        let newTr = document.createElement('TR');
-        newTr.setAttribute('id', 'tableData');
-
-        // create new table data for the name
-        let newName = document.createElement('TD');
-        let newNameText = document.createTextNode(namePlace.value);
-
-        newName.appendChild(newNameText);
-        newTr.appendChild(newName);
+const viewNote = document.querySelector('#view');
+const deleteNote = document.querySelector('#delete');
 
 
-        // create new table data for the date
-        let newDate = document.createElement('TD');
-        let newDateText = document.createTextNode(date.value);
+// when add note button is clicked, do this...
+addBtn.addEventListener('click', () => {
+    if(input.value != '' && inputTitle.value != '') {
 
-        newDate.appendChild(newDateText);
-        newTr.appendChild(newDate);
+        div = document.createElement('div');
+        div.style.backgroundColor = '#ffa';
+
+        title = document.createElement('h2');
+
+        text = document.createElement('p');
+
+        viewBtn = document.createElement('button');
+        viewBtn.id = 'view';
+        console.log(viewBtn.id);
+        viewBtn.innerText = 'View Note';
+
+        deleteBtn = document.createElement('button');
+        deleteBtn.id = 'delete';
+        console.log(deleteBtn.id);
+        deleteBtn.innerText = 'Delete Note';
+
+        title.innerText = inputTitle.value;
+
+        text.innerText = input.value;
+
+        div.appendChild(title);
+        div.appendChild(text);
+        div.appendChild(viewBtn);
+        div.appendChild(deleteBtn);
+
+        div.setAttribute('id', 'toDelete');
+
+        addText.appendChild(div);
 
 
-        // create new table data for the amount
-        let newAmount = document.createElement('TD');
-        let newAmountText = document.createTextNode(`$${amount.value}`);
-        let actualAmount = newAmountText.toString();
 
-
-        newAmount.appendChild(newAmountText);
-        newTr.appendChild(newAmount);
-
-        tableData.appendChild(newTr);
-
-
-        // reset text inputs
-        namePlace.value = '';
-        date.value = '';
-        amount.value = '';
+        input.value = '';
+        inputTitle.value = '';
 
     }
     else {
-        alert("FINISH ALL INPUTS");
+        alert("ADD TEXT U DUMB...");
     }
+});
+
+addText.addEventListener('click', (e) => {
+    
+    if(e.target.id === 'delete') {
+        console.log(this);
+    }
+    
+    
+    
+    // viewNote.addEventListener('click', () => {
+    //     // view note in bigger way idk but it seems very complicated
+    // });
+    // deleteNote.addEventListener('click', () => {
+    //     this.parentElement.remove();
+    // });
+});
+
+
+
+
+
+// we should add an event listener to the notes to expand the note
+// when clicked on
+addText.addEventListener('click', (e) => {
+    console.log(e.target);
+    console.log(e.target.parentElement);
+
+    if(e.target.parentElement = 'div' && e.target.id === 'delete') {
+        //delete note
+        e.target.parentElement.remove();
+    }
+
+    if(e.target.parentElement = 'div' && e.target.id === 'view') {
+        //view note bigger
+
+    }
+
+
+
+    // if(e.target.parentElement.nodeName = 'div' && e.target.id != 'view' && e.target.parentElement.id === 'toDelete' && e.target.id != 'toDelete' ) {
+    //     e.target.parentElement.remove();
+    // }
 });

@@ -4,53 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Tracker</title>
+    <title>Note Taker</title>
 
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <h1>Expense Tracker</h1>
-    <h4>Add A New Item:</h4>
-    <h6>Click on table row to delete expense</h6>
+    <h1>Note Taker</h1>
+    <h3>Add a New Note:</h3>
 
-    <div id="nameContainer">
-        <label for="name">Name:</label>
-        <input type="text" size="80" id="name" placeholder="Where was the expense made?">
+    <label for="noteTitle">Title:</label>
+    <input type="text" id="noteTitle" placeholder="Enter a note title">
+
+    <div id="noteTaker">
+        <label for="note">Note:</label>
+        <textarea name="note" id="note" cols="50" rows="10" placeholder="Write your note here"></textarea>
+        <!-- <input type="text" placeholder="Write your note here" id="note"> -->
     </div>
 
-    <div id="dateNAmountContainer">
-        <label for="date">Date:</label>
-        <input type="date" size="60" placeholder="mm/dd/yyyy" id="date">
-
-        <label for="amount">Amount:</label>
-        <input type="text" size="40" id="amount" placeholder="$0.00">
-    </div>
-
-    <div id="addDataDiv">
-        <button id="addData">Add Expense</button>
+    <div id="boxForButton">
+        <button id="addNote">Add Note</button>
     </div>
 
 
+    <!-- append notes in this div -->
+    <div id="addTextHere">
 
-    <table>
-        <tr id="tableHead">
-          <th>Name</th>
-          <th>Date</th>
-          <th>Amount</th>
-        </tr>
-        <tr id="tableData">
-          <td id="tableData">Gucci</td>
-          <td id="tableData">12-05-2021</td>
-          <td id="tableData">$430.21</td>
-        </tr>
-        <tr id="tableData">
-          <td id="tableData">Nike</td>
-          <td id="tableData">1-12-2022</td>
-          <td id="tableData">$73.41</td>
-        </tr>
-      </table>
-
-
+    </div>
 
     <script src="app.js"></script>
 </body>
