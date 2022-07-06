@@ -4,32 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Note Taker</title>
+    <title>Reviews</title>
 
     <link rel="stylesheet" href="app.css">
+
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    
 </head>
 <body>
-    <h1>Note Taker</h1>
-    <h3>Add a New Note:</h3>
+    <main>
+        <section class="container">
+            <!-- title -->
+            <div class="title">
+                <h2>Our Reviews</h2>
+                <div class="underline"></div>
+            </div>
+            <!-- review -->
+            <article class="review">
+                <div class="img-container">
+                    <img src="pika.png" id="person-img" alt="person1">
+                </div>
+                <h4 id="author">Sara Jones</h4>
+                <p id="job">UX Designer</p>
+                <p id="info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, fugit? Itaque similique inventore at laborum voluptatem incidunt ducimus aperiam, illo assumenda! Pariatur labore aliquid cum, doloremque maiores maxime itaque porro.</p>
+                
+                <!-- prev next buttons -->
+                <div class="button-container">
+                    <button class="prev-btn"><!-- arrow left -->
+                        <svg id="leftArrow" xmlns="http://www.w3.org/2000/svg" width="56" height="25" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                        </svg>
+                    </button>
+                    <button class="next-btn"><!-- arrow right -->
+                        <svg id="rightArrow" xmlns="http://www.w3.org/2000/svg" width="56" height="25" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                        </svg>
+                    </button>
+                </div>
+                <!-- random button -->
+                <button class="random-btn">Suprise Me</button>
+            </article>
+        </section>
+    </main>
 
-    <label for="noteTitle">Title:</label>
-    <input type="text" id="noteTitle" placeholder="Enter a note title">
-
-    <div id="noteTaker">
-        <label for="note">Note:</label>
-        <textarea name="note" id="note" cols="50" rows="10" placeholder="Write your note here"></textarea>
-        <!-- <input type="text" placeholder="Write your note here" id="note"> -->
-    </div>
-
-    <div id="boxForButton">
-        <button id="addNote">Add Note</button>
-    </div>
 
 
-    <!-- append notes in this div -->
-    <div id="addTextHere">
-
-    </div>
 
     <script src="app.js"></script>
 </body>
